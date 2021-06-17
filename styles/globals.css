@@ -1,0 +1,92 @@
+html,
+#__next,
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #181818;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.countdown {
+  display: flex;
+  /* justify-content: flex-start; */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+}
+.countdown > div {
+  margin: 0 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes flip {
+  0% {
+    /* transform: translateY(30px) scale(0.1) rotateY(-90deg); */
+    transform: translateY(30px) rotateX(-90deg);
+  }
+  50% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    /* transform: translateY(-30px) scale(0.1) rotateY(90deg); */
+    transform: translateY(-30px) rotateX(90deg);
+  }
+}
+
+.countdown > div > span:first-child {
+  background: #292929;
+  padding: 20px;
+  font-size: 3rem;
+  border: none;
+  border-radius: 15px;
+  font-family: monospace;
+  margin-bottom: 10px;
+  font-weight: bold;
+  display: flex;
+}
+
+.countdown > div > span:first-child > span.animate {
+  display: block;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  /* animation: flip 0.3s ease; */
+  animation-name: flip;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-duration: 1s;
+}
+
+.countdown > div > span:last-child {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.countdown > div:first-child {
+  margin-left: 0;
+}
+.countdown > div:last-child {
+  margin-right: 0;
+}
